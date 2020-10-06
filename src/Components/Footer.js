@@ -84,35 +84,32 @@ const Footer = () => {
                   <span>
                     <a
                       href='mailto:goe.cohest@gmail.com'
-                      style={{ backgroundColor: '#59dead' }}
+                      style={{ color: '#59dead' }}
                     >
-                      <i class='material-icons prefix'>mail</i>{' '}
+                      <i class='fa fa-envelope fa-2x' aria-hidden='true'></i>{' '}
                     </a>
                   </span>
                   <span style={{ marginLeft: 30 }}>
                     <a
                       href='https://www.instagram.com/invites/contact/?i=4sf6bfv12rne&utm_content=j2yo9za'
-                      style={{ backgroundColor: '#59dead' }}
+                      style={{ color: '#59dead' }}
                     >
-                      <i class='fab fa-instagram'></i>
+                      <i class='fab fa-instagram fa-2x'></i>
                     </a>
                   </span>
                 </p>
-                <p style={{}}>
+                <p style={{ marginTop: 20 }}>
                   <span>
-                    <a
-                      style={{ backgroundColor: '#59dead' }}
-                      href='tel:7814969071'
-                    >
-                      <i class='material-icons prefix'>phone</i>{' '}
+                    <a style={{ color: '#59dead' }} href='tel:7814969071'>
+                      <i class='fa fa-phone fa-2x' aria-hidden='true'></i>{' '}
                     </a>
                   </span>
                   <span style={{ marginLeft: 30 }}>
                     <a
-                      style={{ backgroundColor: '#59dead' }}
+                      style={{ color: '#59dead' }}
                       href='https://www.linkedin.com/company/gateway-of-employment'
                     >
-                      <i className='fab fa-linkedin'></i>
+                      <i className='fab fa-linkedin fa-2x'></i>
                     </a>
                   </span>
                 </p>
