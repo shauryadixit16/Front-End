@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {withRouter} from 'react-router-dom';
+import Welcome from '../Components/Welcome';
 
 
 class Home extends Component{
@@ -8,9 +9,7 @@ class Home extends Component{
     }
     render(){
         return(
-        <div>
-            Welcome!
-        </div>
+        <Welcome/>
         )
     }
 }
