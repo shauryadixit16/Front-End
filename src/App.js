@@ -1,8 +1,8 @@
 import React from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
-import Home from '../src/pages/HomePage'
-import NavTop from '../src/Components/Navbar';
-import Footer from '../src/Components/Footer';
+import Home from './pages/HomePage'
+import NavTop from './Components/Navbar';
+import Footer from './Components/Footer';
 
 import './App.css';
 

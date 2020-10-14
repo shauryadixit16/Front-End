@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import storeInstance from './store/store'
+
+export const StoreContext = React.createContext();
 
 ReactDOM.render(
   <React.StrictMode>
