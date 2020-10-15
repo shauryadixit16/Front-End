@@ -148,3 +148,14 @@ code {
   background-color: transparent;
   border-color: white;
 }
+
+.job .details{
+  background-color: rgb(89, 222, 173);
+}
+.job .details:hover{
+  color:black;
+  background-color: rgb(89, 222, 173);
+}
+CardTitle.title{
+  font-weight: 500;
+}
