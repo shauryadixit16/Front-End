@@ -1,7 +1,11 @@
 import { observable, action } from 'mobx'
 
 class Store {
-    @observable likesCount = 12
+    @observable userData = {}
+
+    @observable jobs = {}
+
+    @observable internships = {}
 }
 
 const storeInstance = new Store()
