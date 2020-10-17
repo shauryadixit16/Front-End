@@ -1,8 +1,18 @@
 import { observable, action } from 'mobx'
+import {getJobList} from '../api/Offer';
 
 class Store {
-    @observable likesCount = 12
+    @observable userData = {}
+
+    @observable jobs = []
+
+    @observable internships = []
+
+    @action getJobData = async ()=>{
+        const result = await getJobList();
+        this.jobs = result.jobs;
+        console.log(result.jobs)
+    }
 }
 
-const storeInstance = new Store()
-export default storeInstance;
+export default new Store();

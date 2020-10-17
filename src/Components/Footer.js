@@ -3,65 +3,65 @@ import 'materialize-css/dist/css/materialize.min.css';
 const Footer = () => {
   return (
     <footer
-      class='page-footer'
+      className='page-footer'
       style={{ backgroundColor: '#fafafa', color: 'black' }}
     >
-      <div class='container'>
-        <div class='row'>
-          <div class='col l6 offset-l1 s12'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col l6 offset-l1 s12'>
             <h2 href='#!'>Contact Us</h2>
-            <div class='row'>
-              <form class='col s12'>
-                <div class='row'>
-                  <div class='input-field'>
-                    <i class='material-icons prefix'>account_circle</i>
+            <div className='row'>
+              <form className='col s12'>
+                <div className='row'>
+                  <div className='input-field'>
+                    <i className='material-icons prefix'>account_circle</i>
                     <input
                       id='icon_prefix'
                       type='text'
-                      class='validate'
+                      className='validate'
                       placeholder='Name'
                     />
                   </div>
-                  <div class='input-field '>
-                    <i class='material-icons prefix'>mail</i>
+                  <div className='input-field '>
+                    <i className='material-icons prefix'>mail</i>
                     <input
                       id='icon_mail'
                       type='email'
-                      class='validate'
+                      className='validate'
                       placeholder='Email'
                     />
                   </div>
-                  <div class='input-field '>
-                    <i class='material-icons prefix'>phone</i>
+                  <div className='input-field '>
+                    <i className='material-icons prefix'>phone</i>
                     <input
                       id='icon_telephone'
                       type='tel'
-                      class='validate'
+                      className='validate'
                       placeholder='Contact No.'
                     />
                   </div>
-                  <div class='input-field'>
-                    <i class='material-icons prefix'>mode_edit</i>
+                  <div className='input-field'>
+                    <i className='material-icons prefix'>mode_edit</i>
                     <textarea
                       id='icon_prefix2'
-                      class='materialize-textarea'
+                      className='materialize-textarea'
                       placeholder='Message'
                     ></textarea>
                   </div>
                 </div>
               </form>
               <button
-                class='btn waves-effect waves-light'
+                className='btn waves-effect waves-light'
                 type='submit'
                 name='action'
                 style={{ backgroundColor: '#59dead' }}
               >
                 Submit
-                <i class='material-icons right'>send</i>
+                <i className='material-icons right'>send</i>
               </button>
             </div>
           </div>
-          <div class='col l3 offset-l2 s12' style={{ paddingTop: 10 }}>
+          <div className='col l3 offset-l2 s12' style={{ paddingTop: 10 }}>
             <ul style={{ fontSize: 18 }}>
               <li style={{ fontSize: 22 }}>
                 <a href='#!' style={{ color: 'black' }}>
@@ -86,7 +86,7 @@ const Footer = () => {
                       href='mailto:goe.cohest@gmail.com'
                       style={{ color: '#59dead' }}
                     >
-                      <i class='fa fa-envelope fa-2x' aria-hidden='true'></i>{' '}
+                      <i className='fa fa-envelope fa-2x' aria-hidden='true'></i>{' '}
                     </a>
                   </span>
                   <span style={{ marginLeft: 30 }}>
@@ -94,14 +94,14 @@ const Footer = () => {
                       href='https://www.instagram.com/invites/contact/?i=4sf6bfv12rne&utm_content=j2yo9za'
                       style={{ color: '#59dead' }}
                     >
-                      <i class='fab fa-instagram fa-2x'></i>
+                      <i className='fab fa-instagram fa-2x'></i>
                     </a>
                   </span>
                 </p>
                 <p style={{ marginTop: 20 }}>
                   <span>
                     <a style={{ color: '#59dead' }} href='tel:7814969071'>
-                      <i class='fa fa-phone fa-2x' aria-hidden='true'></i>{' '}
+                      <i className='fa fa-phone fa-2x' aria-hidden='true'></i>{' '}
                     </a>
                   </span>
                   <span style={{ marginLeft: 30 }}>
@@ -118,8 +118,8 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class='footer-copyright'>
-        <div class='container' style={{ textAlign: 'center', color: 'black' }}>
+      <div className='footer-copyright'>
+        <div className='container' style={{ textAlign: 'center', color: 'black' }}>
           © 2020 Copyright Text
         </div>
       </div>
