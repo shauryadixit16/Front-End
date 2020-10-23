@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardSubtitle, CardText, CardTitle,CardBody,Button } from 'reactstrap';
 
 const  RenderJob= (props) => {
-    console.log(props);
     return(
         <Card key={props.id} className="job">
             <CardBody>
