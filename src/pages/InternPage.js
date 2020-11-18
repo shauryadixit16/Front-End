@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {withRouter} from 'react-router-dom';
-import RenderJob from '../Components/JobComponent';
+import RenderIntern from '../Components/InternComponent';
 import { connect } from 'react-redux';
-import { requestJobs } from '../actions/asyncActions';
+import { requestInts } from '../actions/asyncActions';
+import { CardDeck } from 'reactstrap';
 
-class Job extends Component{
+class Intern extends Component{
 
     componentDidMount(){
-        if(this.props.jobs.length===0){
-            this.props.requestJobs();
+        if(this.props.internships.length===0){
+            this.props.requestInts();
         }
     }
 
     render(){
-        console.log(this.props.jobs)
-        const jobs = this.props.jobs;
-        const jobs2=[
+        console.log(this.props.internships)
+        const internships = this.props.internships;
+        const internships2=[
             {
                 address: "201 Anmol Sagar Darshan, 9/1 New palasia, near mangilal Dhoodh wala, Indore",
                 desc: "To Handle GST Working at the office.",
@@ -94,22 +95,22 @@ class Job extends Component{
             }
             
         ]
-        const Job=jobs.map((job)=>{
+        const Internships=internships.map((interns)=>{
             return(
-                <div key={job._id} className="col-12 col-md-4 mt-5 d-flex align-content-center">
-                        <RenderJob id={job._id} title={job.title} subtitle={job.employerName} desc={job.desc} timing={job.fullTime} />
+                <div key={interns._id} className="col-12 col-md-4 mt-5 d-flex">
+                        <RenderIntern id={interns._id} title={interns.title} subtitle={interns.employerName} desc={interns.desc}/>
                 </div>
             )
         })
         return(
             <div className="container">
                 <div className='col-12'>
-                    <h3 className="text-center">Jobs</h3>
+                    <h3 className="text-center">Internships</h3>
                     <hr />
                 </div>
                 
                 <div className="row">
-                    {Job}
+                    <CardDeck>{Internships}</CardDeck>
                    {/* {Job} */}
                    {/* <div key="1" className="col-12 col-md-4 mt-5">
                         <RenderJob id='1234' title='Software engineer' subtitle='Google' 
@@ -123,17 +124,17 @@ class Job extends Component{
 
 const getPropsFromState = (state) => {
     return {
-        jobs: state.jobs,
+        internships: state.internships,
     }
 }
 
 const getDispatchFunctions = (dispatch) => {
     return {
-        requestJobs: () => { dispatch(requestJobs()) },
+        requestInts: () => { dispatch(requestInts()) },
     }
 }
 
-export default withRouter(connect(getPropsFromState, getDispatchFunctions)(Job));
+export default withRouter(connect(getPropsFromState, getDispatchFunctions)(Intern));
 
 /*
     To identify an empty object
