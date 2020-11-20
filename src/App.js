@@ -5,6 +5,7 @@ import NavTop from './Components/Navbar';
 import Footer from './Components/Footer';
 import Job from './pages/JobPage';
 import Intern from './pages/InternPage';
+import Profile from './pages/ProfilePage';
 import './App.css';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
                 <Route exact path="/" component={Home}/>
                 <Route exact path="/jobs" component={Job}/>
                 <Route exact path="/internships" component={Intern}/>
+                <Route exact path="/profile" component={Profile}></Route>
               </Switch>   
               <Footer/>
       </BrowserRouter>
