@@ -156,7 +156,9 @@ const Signup = () => {
                   <div class='row'>
                     {modal ? (
                       <button
-                        class='btn  waves-light btn-large modal-trigger'
+
+                        class='btn waves-light btn-large modal-trigger'
+
                         style={{ backgroundColor: '#59dead', marginBottom: 15 }}
                         type='submit'
                         href='#modal1'

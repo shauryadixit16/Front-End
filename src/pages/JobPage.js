@@ -97,7 +97,7 @@ class Job extends Component{
         const Job=jobs.map((job)=>{
             return(
                 <div key={job._id} className="col-12 col-md-4 mt-5 d-flex align-content-center">
-                        <RenderJob id={job._id} title={job.title} subtitle={job.employerName} desc={job.desc} timing={job.fullTime} />
+                        <RenderJob id={job._id} title={job.title} subtitle={job.employerName} desc={job.desc} timing={job.fullTime} address={job.address} salary={job.salary} reqs={job.reqs} reason={job.reason} perm={job.permanent}/>
                 </div>
             )
         })
