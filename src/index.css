@@ -156,6 +156,14 @@ code {
   color:black;
   background-color: rgb(89, 222, 173);
 }
+
+.intern .details{
+  background-color: rgb(89, 222, 173);
+}
+.intern .details:hover{
+  color:black;
+  background-color: rgb(89, 222, 173);
+}
 CardTitle.title{
   font-weight: 500;
 }

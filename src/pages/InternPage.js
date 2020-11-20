@@ -4,7 +4,6 @@ import {withRouter} from 'react-router-dom';
 import RenderIntern from '../Components/InternComponent';
 import { connect } from 'react-redux';
 import { requestInts } from '../actions/asyncActions';
-import { CardDeck } from 'reactstrap';
 
 class Intern extends Component{
 
@@ -97,8 +96,9 @@ class Intern extends Component{
         ]
         const Internships=internships.map((interns)=>{
             return(
-                <div key={interns._id} className="col-12 col-md-4 mt-5 d-flex">
-                        <RenderIntern id={interns._id} title={interns.title} subtitle={interns.employerName} desc={interns.desc}/>
+                <div key={interns._id} className="col-12 col-md-4 mt-5 d-flex align-contents-center">
+                    {interns.fromHome && <RenderIntern id={interns._id} title={interns.title} subtitle={interns.employerName} desc={interns.desc} duration={interns.duration} stipend={interns.stipend} reqs={interns.reqs} reason={interns.reason} fromHome={interns.fromHome}/>}
+                    {!interns.fromHome && <RenderIntern id={interns._id} title={interns.title} subtitle={interns.employerName} desc={interns.desc} duration={interns.duration} stipend={interns.stipend} reqs={interns.reqs} reason={interns.reason} fromHome={interns.fromHome} address={interns.address}/>}
                 </div>
             )
         })
@@ -110,7 +110,7 @@ class Intern extends Component{
                 </div>
                 
                 <div className="row">
-                    <CardDeck>{Internships}</CardDeck>
+                    {Internships}
                    {/* {Job} */}
                    {/* <div key="1" className="col-12 col-md-4 mt-5">
                         <RenderJob id='1234' title='Software engineer' subtitle='Google' 
