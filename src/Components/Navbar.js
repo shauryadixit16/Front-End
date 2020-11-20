@@ -100,6 +100,11 @@ class NavTop extends Component{
                             :null}
                         </Nav>
                         <Nav navbar>
+                        {this.state.currentUser!=="" && <NavItem>
+                                <NavLink className="nav-link" to="/profile" onClick={this.toggleNav}>
+                                    MY PROFILE
+                                </NavLink>
+                            </NavItem>}
                             <NavItem>
                                 <Button outline onClick={this.toggleModal} className="login-button">
                                     {this.state.currentUser!==""?"LOGOUT":"LOGIN/SIGNUP"}
