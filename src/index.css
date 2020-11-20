@@ -159,3 +159,7 @@ code {
 CardTitle.title{
   font-weight: 500;
 }
+.modal.fade.show{
+  height: 100vh;
+  min-height: 100%;
+}
