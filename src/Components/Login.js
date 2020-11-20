@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
+const Login = () => {
   useEffect(() => {
     M.AutoInit();
   });
@@ -102,7 +103,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
                 <center>
                   <div class='row'>
                     <button
-                      class='btn waves-effect waves-light btn-large'
+                      class='btn waves-light btn-large'
                       style={{ backgroundColor: '#59dead', marginBottom: 15 }}
                       type='submit'
                       onClick={onsubmit}
