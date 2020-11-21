@@ -64,7 +64,7 @@ const Footer = () => {
           <div className='col l3 offset-l2 s12' style={{ paddingTop: 10 }}>
             <ul style={{ fontSize: 18 }}>
               <li style={{ fontSize: 22 }}>
-                <a href='#!' style={{ color: 'black' }}>
+                <a href='/#aboutus' style={{ color: 'black' }}>
                   <p>About us</p>
                 </a>
               </li>
