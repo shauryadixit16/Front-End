@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import {Link} from 'react-router-dom';
  const ProfileSeeker = () => {
   useEffect(() => {
     M.AutoInit();
@@ -51,7 +52,7 @@ const {recommend} = state;
     </form>
   </div>
   <div>
-      <a class=" waves-light btn"><i class="material-icons right">update</i>Update Profile</a>
+      <Link to='/updateprofile' class=" waves-light btn"><i class="material-icons right">update</i>Update Profile</Link>
     </div>
           </div>
       </div>
