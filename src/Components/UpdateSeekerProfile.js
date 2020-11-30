@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {Link} from 'react-router-dom';
-const Signup = () => {
+const UpdateSeekerProfile = () => {
   useEffect(() => {
     M.AutoInit();
   });
   const [state, Setstate] = useState({
-    name: '',
-    email: '',
-    password: '',
-    password2: '',
-    username: '',
+    fname: '',
+    dob: '',
+    mobile: '',
     modal: false,
+    exp: '',
+    textarea1: '',
+    skilled: '',
   });
-  const { name, email, password, password2, modal, username } = state;
+  const {
+    fname,
+    dob,
+    mobile,
+    modal,
+    exp,
+    textarea1,
+    skilled,
+  } = state;
 
   const onchange = (e) => {
     Setstate({ ...state, [e.target.name]: e.target.value });
@@ -22,15 +30,16 @@ const Signup = () => {
 
   const onsubmit = (e) => {
     e.preventDefault();
-    if (name === '' || email === '' || password === '' || username === '') {
+    if (
+      fname === '' ||
+      dob === '' ||
+      mobile === '' ||
+      exp === '' ||
+      textarea1 === '' ||
+      skilled === ''
+    ) {
       return M.toast({
         html: 'Please Enter all the fields',
-        displayLength: 3000,
-      });
-    }
-    if (password !== password2) {
-      return M.toast({
-        html: 'Make sure to enter the same password ',
         displayLength: 3000,
       });
     }
@@ -39,15 +48,15 @@ const Signup = () => {
 
   const register = (e) => {
     e.preventDefault();
-    console.log(name, email, password);
-    // API CALL
+    // // API CALL
     M.toast({ html: 'You have been Registered', displayLength: 3000 });
     Setstate({
-      name: '',
-      email: '',
-      password: '',
-      password2: '',
+      fname: '',
+      dob: '',
+      mobile: '',
+      exp: '',
       modal: false,
+      textarea1: '',
     });
   };
 
@@ -60,9 +69,9 @@ const Signup = () => {
     >
       <main>
         <center>
-          <h5 className='heading' style={{ color: '#59dead' }}>
-            Register <i class='fas fa-sign-in-alt'></i>
-          </h5>
+          <h6 className='heading' style={{ color: '#59dead' }}>
+            User Details <i class='fas fa-user-plus'></i>
+          </h6>
 
           <div class='container' style={{ marginTop: 20, paddingBottom: 20 }}>
             <div
@@ -90,68 +99,131 @@ const Signup = () => {
                     <input
                       class='validate'
                       type='text'
-                      name='name'
-                      id='name'
-                      value={name}
+                      name='fname'
+                      id='fname'
+                      value={fname}
                       onChange={onchange}
                     />
-                    <label for='name'>Name</label>
+                    <label for='fname'>Father's Name</label>
                   </div>
                 </div>
+
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input
+                      class='validate'
+                      type='date'
+                      name='dob'
+                      id='dob'
+                      value={dob}
+                      onChange={onchange}
+                    />
+                    <label for='dob'>DOB</label>
+                  </div>
+                </div>
+
+                <div class='row'>
+                  <div class='input-field col s12'>
+                    <input
+                      class='validate'
+                      type='number'
+                      name='mobile'
+                      id='mobile'
+                      value={mobile}
+                      onChange={onchange}
+                    />
+                    <label for='mobile'>Mobile Number</label>
+                  </div>
+                </div>
+
                 <div class='row'>
                   <div class='input-field col s12'>
                     <input
                       class='validate'
                       type='text'
-                      name='username'
-                      id='username'
-                      value={username}
+                      name='exp'
+                      id='exp'
+                      value={exp}
                       onChange={onchange}
                     />
-                    <label for='username'>Username</label>
+                    <label for='exp'>Experience</label>
+                  </div>
+                </div>
+                <div className='row'>
+                  <p>
+                    <label
+                      style={{
+                        color: '#59dead',
+                        fontWeight: 600,
+                        fontSize: 12,
+                      }}
+                    >
+                      Are you a Skilled worker?
+                    </label>
+                  </p>
+                  <div class='input-field col s12'>
+                    <label>
+                      <input
+                        name='skilled'
+                        className='with-gap'
+                        type='radio'
+                        value='yes'
+                      />
+                      <span>Yes</span>
+                    </label>
+                  </div>
+                  <div class='input-field col s12'>
+                    <label>
+                      <input
+                        name='skilled'
+                        className='with-gap'
+                        type='radio'
+                        value='no'
+                      />
+                      <span>No</span>
+                    </label>
                   </div>
                 </div>
                 <div class='row'>
                   <div class='input-field col s12'>
-                    <input
-                      class='validate'
-                      type='email'
-                      name='email'
-                      id='email'
-                      value={email}
+                    <textarea
+                      id='textarea1'
+                      name='textarea1'
+                      class='materialize-textarea'
+                      value={textarea1}
                       onChange={onchange}
-                    />
-                    <label for='email'>Email</label>
+                    ></textarea>
+                    <label for='textarea1'>
+                      <i class='fas fa-align-left'></i> {''} {''}Fields of
+                      Interest
+                    </label>
                   </div>
                 </div>
-
-                <div class='row'>
+                <div className='row'>
+                  <p>
+                    <label
+                      style={{
+                        color: '#59dead',
+                        fontWeight: 600,
+                        fontSize: 12,
+                      }}
+                    >
+                      Type of employment you are looking for :{' '}
+                    </label>
+                  </p>
                   <div class='input-field col s12'>
-                    <input
-                      class='validate'
-                      type='password'
-                      name='password'
-                      id='password'
-                      value={password}
-                      onChange={onchange}
-                    />
-                    <label for='password'>Password</label>
+                    <label>
+                      <input name='group1' className='with-gap' type='radio' />
+                      <span>Permanent</span>
+                    </label>
                   </div>
-                </div>
-                <div class='row'>
                   <div class='input-field col s12'>
-                    <input
-                      class='validate'
-                      type='password'
-                      name='password2'
-                      id='password2'
-                      value={password2}
-                      onChange={onchange}
-                    />
-                    <label for='password2'>Confirm Password</label>
+                    <label>
+                      <input name='group1' className='with-gap' type='radio' />
+                      <span>Temporary</span>
+                    </label>
                   </div>
                 </div>
-
                 <br />
                 <center>
                   <div class='row'>
@@ -167,7 +239,7 @@ const Signup = () => {
                       </button>
                     ) : (
                       <button
-                        class='btn waves-effect waves-light'
+                        class='btn waves-light btn-large'
                         style={{ backgroundColor: '#59dead', marginBottom: 15 }}
                         type='submit'
                         onClick={onsubmit}
@@ -177,23 +249,9 @@ const Signup = () => {
                       </button>
                     )}
                   </div>
-                  <h5 style={{ marginBottom: 20, marginTop: 35 }}>
-                    Already have an account?{' '}
-                    <span>
-                      {' '}
-                      <Link
-                      exact
-                        to='/login'
-                        style={{
-                          color: '#43cea2',
-                          fontWeight: '600',
-                          fontSize: 25,
-                        }}
-                      >
-                        Login
-                      </Link>
-                    </span>{' '}
-                  </h5>
+                  <h4 style={{ marginBottom: 20, marginTop: 35 }}>
+                    Gateway of Employement
+                  </h4>
 
                   <div id='modal1' class='modal'>
                     <div class='modal-content'>
@@ -226,4 +284,6 @@ const Signup = () => {
     </body>
   );
 };
-export default Signup;
+
+export default UpdateSeekerProfile;
+
