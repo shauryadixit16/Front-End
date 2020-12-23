@@ -90,19 +90,16 @@ const Login = () => {
                     />
                     <label for='password'>Enter your Password</label>
                   </div>
-
-                  <label
-                    style={{ float: 'right', marginTop: 20, fontSize: 15 }}
+            </div>
+            <div style={{ float:'left', fontSize: 15 }}
                   >
                     <a class='pink-text' href='#!'>
                       <b>Forgot Password?</b>
                     </a>
-                  </label>
-                </div>
-
+                  </div>
                 <br />
                 <center>
-                  <div class='row'>
+                  <div class='row mt-4'>
                     <button
                       class='btn waves-effect waves-light btn-large'
                       style={{ backgroundColor: '#59dead', marginBottom: 15 }}
@@ -141,3 +138,4 @@ const Login = () => {
 };
 
 export default Login;
+

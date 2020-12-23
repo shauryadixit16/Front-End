@@ -12,8 +12,6 @@ const PostJob = () => {
     salary: '',
     gain: '',
     job: '',
-    duration : '',
-    time : '',
     home :'',
     address:'',
     optional : ''
@@ -26,7 +24,7 @@ const PostJob = () => {
 
   const onsubmit = (e) => {
     e.preventDefault();
-    if (title === '' || desc === '' || req === '' || salary === '' || gain === '' || time === '' || (job ==='no' && duration==='') || (home ==='no' && address==='')  ){
+    if (title === '' || desc === '' || req === '' ||  gain === '' ||  (job ==='yes' && salary==='') || (home ==='no' && address==='')  ){
       return M.toast({  
         html: 'Please Enter all the fields',
         displayLength: 3000,
@@ -50,8 +48,6 @@ const PostJob = () => {
       salary: '',
       gain: '',
       job: '',
-      duration : '',
-      time:'',
       home : '',
       address: '',
       optional : ''
@@ -80,7 +76,7 @@ const PostJob = () => {
                 backgroundColor: '#f5f5f5',
                 boxShadow: 10,
               }}
-            ><h5 className='heading' style={{ color: '#59dead' }}>Post Your Job {' '}
+            ><h5 className='heading' style={{ color: '#59dead' }}>Post Your Intern {' '}
             <i class="fas fa-user-md"></i>
           </h5>
               <form
@@ -129,7 +125,7 @@ const PostJob = () => {
                     <label for='req'>Requirements</label>
                   </div>
                 </div> 
-                <div class='row'>
+                {/* <div class='row'>
                   <div class='input-field col s12'>
                     <input
                       class='validate'
@@ -139,15 +135,15 @@ const PostJob = () => {
                       value={salary}
                       onChange={onchange}
                     />
-                    <label for='salary'>Salary in Rs per month</label>
+                    <label for='salary'>Stipend in Rs per month</label>
                   </div>
-                </div>
+                </div> */}
                 <div class="row">
                 <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
                     <textarea name="gain" id="gain" value={gain} onChange={onchange} class="materialize-textarea"></textarea>
-                    <label for="gain">What will the employee gain?</label>
+                    <label for="gain">What will the Intern gain?</label>
                     </div>
                 </div>
                 </form>
@@ -160,50 +156,36 @@ const PostJob = () => {
                         fontSize: 15,
                       }}
                     >
-                    This is a Permanent job
+                    This is a Paid Intern?
                     </label>
-                  </p>
+                  </p> 
                 <p>
                 <label>
-                  <input name="job" type="radio" checked={job === 'yes'}  value='yes' onChange={onchange}/>
+                  <input name="job"  className='with-gap' type="radio" checked={job === 'yes'}  value='yes' onChange={onchange}/>
                   <span>Yes</span>
                 </label>
               </p>
-              <p>
-                <label>
-                  <input name="job" type="radio" checked={job === 'no'}  value='no'  onChange={onchange}/>
-                  <span>No</span>
-                </label>
-              </p>
-              {job === 'no' && (
-                <div class='row'>
-                <div class='input-field col s12'>
-                  <input
-                    class='validate'
-                    type='text'
-                    name='duration'
-                    id='duration'
-                    value={duration}
-                    onChange={onchange}
-                  />
-                  <label for='duration'>Duration</label>
-                </div>
-              </div>
+               {job === 'yes' && (
+                 <div class='row'>
+                 <div class='input-field col s12'>
+                   <input
+                     class='validate'
+                     type='text'
+                     name='salary'
+                     id='salary'
+                     value={salary}
+                     onChange={onchange}
+                   />
+                   <label for='salary'>Stipend in Rs per month</label>
+                 </div>
+               </div>
               )}
               <p>
                 <label>
-                  <input name="time" type="radio" checked={time === 'part-time'}  value='part-time' onChange={onchange}/>
-                  <span>Part-Time</span>
+                  <input name="job"  className='with-gap' type="radio" checked={job === 'no'}  value='no'  onChange={onchange}/>
+                  <span>No</span>
                 </label>
               </p>
-              <p>
-                <label>
-                  <input name="time" type="radio" checked={time === 'full-time'}  value='full-time'  onChange={onchange}/>
-                  <span>Full-Time</span>
-                </label>
-              </p>
-
-
 
               <p>
                     <label
@@ -211,20 +193,21 @@ const PostJob = () => {
                         color: '#59dead',
                         fontWeight: 600,
                         fontSize: 15,
+                        marginTop:50
                       }}
                     >
-               Employee can work from home?
+               Intern will work from home?
                     </label>
                   </p>
                 <p>
                 <label>
-                  <input name="home" type="radio" checked={home === 'yes'}  value='yes' onChange={onchange}/>
+                  <input name="home" type="radio" className="with-gap" checked={home === 'yes'}  value='yes' onChange={onchange}/>
                   <span>Yes</span>
                 </label>
               </p>
               <p>
                 <label>
-                  <input name="home" type="radio" checked={home === 'no'}  value='no'  onChange={onchange}/>
+                  <input name="home" type="radio" className="with-gap" checked={home === 'no'}  value='no'  onChange={onchange}/>
                   <span>No</span>
                 </label>
               </p>

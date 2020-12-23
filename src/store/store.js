@@ -14,5 +14,4 @@ class Store {
         console.log(result.jobs)
     }
 }
-
 export default new Store();
