@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import {Redirect} from 'react-router-dom';
 const PostJob = () => {
   useEffect(() => {
-    M.AutoInit();
+      M.AutoInit();
   });
   const [state, Setstate] = useState({
     title: '',
@@ -16,7 +17,7 @@ const PostJob = () => {
     address:'',
     optional : ''
   });
-  const { title, desc, req, salary, job, gain ,duration ,home, time , address,optional} = state;
+  const { title, desc, req, salary, job, gain,home, address,optional} = state;
 
   const onchange = (e) => {
     Setstate({ ...state, [e.target.name]: e.target.value });
@@ -35,24 +36,24 @@ const PostJob = () => {
   }
   };
 
-  const register = (e) => {
-    e.preventDefault();
+  // const register = (e) => {
+  //   e.preventDefault();
    
-    // API CALL
+  //   // API CALL
 
-    M.toast({ html: 'You have been Registered', displayLength: 3000 });
-    Setstate({
-      title: '',
-      desc: '',
-      req: '',
-      salary: '',
-      gain: '',
-      job: '',
-      home : '',
-      address: '',
-      optional : ''
-    });
-  };
+  //   M.toast({ html: 'You have been Registered', displayLength: 3000 });
+  //   Setstate({
+  //     title: '',
+  //     desc: '',
+  //     req: '',
+  //     salary: '',
+  //     gain: '',
+  //     job: '',
+  //     home : '',
+  //     address: '',
+  //     optional : ''
+  //   });
+  // };
 
   return (
     <body

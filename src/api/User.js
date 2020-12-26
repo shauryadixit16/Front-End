@@ -7,10 +7,10 @@ export const getProfile = async (params) => {
     return data;
 }
 
-export const getNotifications = async () => {
-    const {data} = await api.get('/user/notifications', { headers : headers }).catch(e => { console.log(e.message) });
-    return data;
-}
+// export const getNotifications = async () => {
+//     const {data} = await api.get('/user/notifications', { headers : headers }).catch(e => { console.log(e.message) });
+//     return data;
+// }
 
 export const changeEmail = async (email) => {
     const {data} = await api.post("/user/change-email", {headers: headers, email:email}).catch(e => { console.log(e.message) });

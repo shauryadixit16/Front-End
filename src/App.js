@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import Home from './pages/HomePage'
 import NavTop from './Components/Navbar';
-import Footer from './Components/Footer';
+import ContactUs from './Components/ContactUs';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import PostJob from './Components/PostJob';
@@ -21,7 +21,7 @@ class App extends Component {
               <NavTop/>
               <Switch>
                 <Route exact path="/" component={Home}/>
-                <Route exact path="/jobs" component={Job}/>
+                {/* <Route exact path="/jobs" component={Job}/> */}
                 <Route exact path="/internships" component={Intern}/>
                 <Route exact path="/profile" component={Profile}></Route>
                 <Route exact path="/updateprofile" component={UpdateSeekerProfile}></Route>
@@ -29,9 +29,8 @@ class App extends Component {
                 <Route exact path='/login' component={Login} />
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/postjob' component={PostJob} />
-                <Route exact path='/postjob' component={PostJob} />
+                <Route exact path='/contactus' component={ContactUs} />
               </Switch>   
-              <Footer/>
       </BrowserRouter>
     )
   }

@@ -1,10 +1,22 @@
-import React, { Component,useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardSubtitle, CardText, CardTitle,CardBody,Button,Modal,ModalHeader,ModalBody,FormGroup, Label, Input  } from 'reactstrap';
-
+import M from 'materialize-css/dist/js/materialize.min.js';
 const  RenderIntern= (props) => {
+    useEffect(() => {
+        M.AutoInit();
+      });
     const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const toggle = () => {
+        setModal(!modal);
+    }
+    const submit = () => {
+        toggle();
+        return M.toast({
+            html: 'You have Successfully Applied for this intern',
+            displayLength: 3000,
+          });
+    }
     return(
         <div className="intern-comp">
             <Card key={props.id} className="intern" >
@@ -39,11 +51,11 @@ const  RenderIntern= (props) => {
                     }
                     {props.fromHome && <p>Work from Home.</p>}
                 </ModalBody>
-                <FormGroup>
+                {/* <FormGroup>
                 <Label for="exampleFile">Enter a Proposal</Label>
                 <Input type="file" name="file" id="exampleFile"/>
-                </FormGroup>
-                <Button outline color="success"onClick={toggle}>Apply</Button>{' '}
+                </FormGroup> */}
+                <Button outline color="success"onClick={submit}>Apply</Button>{' '}
             </Modal>
         </div>
     )

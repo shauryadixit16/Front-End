@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {Link} from 'react-router-dom';
-const Login = () => {
+import {Link , withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {login} from '../actions/asyncActions';
+const Login = ({login}) => {
   useEffect(() => {
     M.AutoInit();
   });
@@ -24,9 +26,10 @@ const Login = () => {
         html: 'Please Enter all the fields',
         displayLength: 3000,
       });
-    }
-    console.log(email, password);
-    // API CALL
+     }
+    
+   login(email,password);
+ console.log(email, password);
     Setstate({ email: '', password: '' });
   };
 
@@ -136,6 +139,10 @@ const Login = () => {
     </body>
   );
 };
+const getDispatchFunctions = (dispatch) => {
+  return {
+      login: () => { dispatch(login()) },
+  }
+}
 
-export default Login;
-
+export default withRouter(connect(null , getDispatchFunctions)(Login));

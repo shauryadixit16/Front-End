@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {Link} from 'react-router-dom';
-const Signup = () => {
+import {Link , withRouter} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {Register} from '../actions/asyncActions';
+const Signup = ({Register}) => {
   useEffect(() => {
     M.AutoInit();
   });
@@ -37,16 +39,20 @@ const Signup = () => {
     return Setstate({ ...state, modal: true });
   };
 
-  const register = (e) => {
+  const reg = (e) => {
     e.preventDefault();
     console.log(name, email, password);
+    
     // API CALL
+    Register( {name,email,password,username},2)
+    
     M.toast({ html: 'You have been Registered', displayLength: 3000 });
     Setstate({
       name: '',
       email: '',
       password: '',
       password2: '',
+      username:'',
       modal: false,
     });
   };
@@ -510,7 +516,7 @@ Please send your feedback, comments, requests for technical support by email:
                       <button
                         href='#!'
                         class='modal-close  waves-green btn-flat'
-                        onClick={register}
+                        onClick={reg}
                       >
                         Agree
                       </button>
@@ -525,4 +531,10 @@ Please send your feedback, comments, requests for technical support by email:
     </body>
   );
 };
-export default Signup;
+
+const getDispatchFunctions = (dispatch) => {
+  return {
+      Register: () => { dispatch(Register()) },
+  }
+}
+export default withRouter(connect(null , getDispatchFunctions)(Signup));

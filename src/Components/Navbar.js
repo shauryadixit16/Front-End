@@ -76,11 +76,11 @@ class NavTop extends Component{
                                     HOME
                                 </NavLink>
                             </NavItem>
-                            <NavItem>
+                            {/* <NavItem>
                                 <NavLink to="/jobs" className="nav-link" onClick={()=>{this.setState({selected:"job",isNavOpen: !this.state.isNavOpen})}}>
                                     JOBS
                                 </NavLink>
-                            </NavItem>
+                            </NavItem> */}
                             <NavItem>
                             <NavLink to="/internships" className="nav-link" onClick={()=>{this.setState({selected:"in",isNavOpen: !this.state.isNavOpen})}}>
                                     INTERNSHIPS
