@@ -16,7 +16,7 @@ const AboutUs=()=>{
             <h4>Shivang Khandelwal</h4>
             <h6 className="text-muted">Founder</h6>
             </div>
-            <div className="col-12 col-lg-7 offset-lg-1 my-3"><p className="text-justify" >Gateway of Employment is an HR service provider, aiming to eradicate unemployment from the country. Here at "GOE", we look forward to creating a positive recruiter-employee bond where the recruiter can post job opportunities to which an aspirant can apply. The entire world has an endless list of people who are jobless and are impuissant to earn even a meal. We urge you not to lose all hopes of procuring jobs and start again. To produce employment, we lead to establishing a bridge between the workers and recruiters.</p>
+            <div className="col-12 col-lg-7 offset-lg-1 my-3"><p className="text-justify" >“Every generation must think several steps ahead of their previous generations". Well said and probably well implemented by the Governement of India. In accordance with the Natioanl Education Policy, the students will be required to take part in short summer internships and gain experience from the companies. They can work there for short span of 10 days. Bringing this into light, we would like to introduce that we,at  Gateway of Employement comes with a novel concept aiming to provide work experience to young minds with the onset of their career. We are looking on to connect the high school students, under the National Education Policy, with the companies for summer internships. Being a student, one dont really understanf the importance of skills and experenice unless the person faces the corporates. Therefore, to unfold the reality of work life, its important for them to understand how things go beyond their comfort zones. So it is of outmost priority to let yor child learn big things from the very start.</p>
             <blockquote className="blockquote">"The two most powerful warriors are patience and time". <footer className="blockquote-footer">Leo Tolstoy, War and Peace</footer></blockquote>
             <p className="text-justify"> We understand the importance of time, and hence we care for yours. GOE pledges to find a gate thereby paving the way towards an "Atmanirbhar India". We bridge the gap between enthusiastic, talented individuals and the destination expecting them, taking them to their target and kissing the glorifying success. We identify the best talents to work for you in highly professional and organized establishments sector of India through our services.  
             </p>
@@ -28,7 +28,7 @@ const AboutUs=()=>{
 
             <div className="row d-flex justify-content-between my-4 ">
           <div className="col-lg-3 col-md-4 text-center my-3" style={{borderColor:'black' , borderWidth:2}}>
-              <img className="rounded-circle img-fluid offset-lg-1" src={s2} style={{width:170 , height:180}}></img>
+              <img className="rounded-circle img-fluid offset-lg-1" src={s2} style={{width:180 , height:190}}></img>
                 <h4 className="mt-5 mb-4">Shaurya Dixit</h4>
                 <h6 className="text-muted">Front-End Developer</h6>
               <p className="text-justify mt-3">Persuing BTech from IIT Jodhpur .I am Passionate about Web Development,App Development and Competetive Programming.I am always keen on exploring and learning new productive things. I also love to play and watch Cricket.</p>
@@ -52,8 +52,8 @@ const AboutUs=()=>{
               </div>
           </div>
       
-          <div className="col-lg-3 col-md-6 text-center my-4">
-              <img className="rounded-circle img-fluid offset-lg-1" src={pawan} style={{width:170 , height:180}}></img>
+          <div className="col-lg-3 col-md-6 text-center my-4" >
+              <img className="rounded-circle img-fluid offset-lg-1" src={pawan} style={{width:170 , height:180 ,marginLeft : 10}}></img>
                 <h4  className="mt-4">Pawan Suryavanshi</h4>
                 <h6 className="text-muted">Back-End Developer</h6>
                 <p className=" mt-3 text-justify">I am a sophomore Electrical Engineering student from IITJ, my interests are vast including competitive coding, dev, machine learning and robotics. I also play chess sometimes.</p>
@@ -75,10 +75,9 @@ const AboutUs=()=>{
             </div>
               </div>
             </div>
-    
-
-          <div className="col-lg-3 col-md-6 text-center my-4">
          
+          <div className="col-lg-3 col-md-6 text-center my-4" >
+
               <img className="rounded-circle img-fluid offset-lg-1" src={mohan}  style={{width:170 , height:180}}></img>
                 <h4  className="mt-4">Mohan Chhabaria</h4>
                 <h6 className="text-muted">Back-End Developer</h6>
@@ -104,11 +103,8 @@ Also a travel addict and a Melophile. */}
             </div>
               </div>
             </div>
-          
           </div>
-
         </div>
-        
     )
 }
 export default AboutUs;

@@ -30,6 +30,12 @@ const Signup = ({Register}) => {
         displayLength: 3000,
       });
     }
+    if(password.length < 8){
+      return M.toast({
+        html: 'Password should be of atleast 8 characters',
+        displayLength: 3000,
+      });
+    }
     if (password !== password2) {
       return M.toast({
         html: 'Make sure to enter the same password ',
@@ -46,7 +52,7 @@ const Signup = ({Register}) => {
     // API CALL
     Register( {name,email,password,username},2)
     
-    M.toast({ html: 'You have been Registered', displayLength: 3000 });
+    M.toast({ html: 'You have been successfully Registered', displayLength: 3000 });
     Setstate({
       name: '',
       email: '',

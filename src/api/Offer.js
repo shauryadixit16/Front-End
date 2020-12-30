@@ -9,7 +9,7 @@ export const editIn = async (info) => {
 
 export const getIn = async (employer) =>{
     const {data} = await api.get('/offer/internship-list', { params: { employer: employer ? employer : null } }).catch(e=>{console.log(e.message)});
-    return data
+    return data;
 }
 
 export const removeIn = async (_id) => {

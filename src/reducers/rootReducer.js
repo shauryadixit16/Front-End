@@ -1,6 +1,7 @@
 const initState = {
     jobs: [],
     internships: [],
+    user:{}
 }
 
 const rootReducer = (state= initState, action) => {
@@ -14,6 +15,12 @@ const rootReducer = (state= initState, action) => {
         state = {
             ...state,
             internships: action.internships,
+        }
+    }
+    else if (action.type==="USER_INFO"){
+        state = {
+            ...state,
+            user: action.userData,
         }
     }
 

@@ -1,17 +1,23 @@
 import React,{useEffect,useState} from 'react'
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import microsoft from '../img/microsoft.jpg'
-import {Link} from 'react-router-dom';
-const ProfileRecruiter = () => {
+import microsoft from '../img/s2.jpg'
+import {Link , Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+const ProfileRecruiter = ({user}) => {
+  const [redirctTo, setRedirctTo] = useState(false);
     useEffect(() => {
+      if(!user){setRedirctTo({redirctTo:true})}
+    console.log(user);
         M.AutoInit();
       });
       const [state,Setstate] = useState({
         toggle : false,about:''
       });
       const {toggle , about} = state;
-
+      if(redirctTo){
+        return <Redirect to="/login" />
+     }else{
     return (
         <div className="profile">
       <div className="container">
@@ -22,7 +28,7 @@ const ProfileRecruiter = () => {
                 <img src={microsoft} style={{height:240,width:300}} alt="User Image"/>
               </div>
             </div>
-            <div className="col s12 m8 push-m1 bg-success mt-3" style={{paddingLeft:30}}>
+            <div className="col s12 m8 push-m1 bg-success mt-3" style={{paddingLeft:15}}>
               {/* <h2 className="name">Microsoft</h2>
               <h5 className="name my-4"> IT Company</h5>
               <a href="mailto:mchhabaria123@gmail.com" target="_blank" style={{color: 'green'}}>
@@ -67,4 +73,11 @@ const ProfileRecruiter = () => {
       </div>
     )
 }
-export default ProfileRecruiter;
+}
+
+const getPropsFromState = (state) => {
+  return {
+      user : state.user,
+  }
+}
+export default connect(getPropsFromState,null)(ProfileRecruiter);

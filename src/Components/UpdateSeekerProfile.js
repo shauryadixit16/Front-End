@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-const UpdateSeekerProfile = () => {
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+const UpdateSeekerProfile = ({user}) => {
+  const [redirctTo, setRedirctTo] = useState(false);
   useEffect(() => {
-    M.AutoInit();
+    if(!user){setRedirctTo({redirctTo:true})}
+    console.log(user);
+      M.AutoInit();
   });
   const [state, Setstate] = useState({
     fname: '',
@@ -12,7 +17,7 @@ const UpdateSeekerProfile = () => {
     modal: false,
     exp: '',
     textarea1: '',
-    skilled: '',
+    // skilled: '',
   });
   const {
     fname,
@@ -21,7 +26,7 @@ const UpdateSeekerProfile = () => {
     modal,
     exp,
     textarea1,
-    skilled,
+    // skilled,
   } = state;
 
   const onchange = (e) => {
@@ -35,8 +40,8 @@ const UpdateSeekerProfile = () => {
       dob === '' ||
       mobile === '' ||
       exp === '' ||
-      textarea1 === '' ||
-      skilled === ''
+      textarea1 === '' 
+      // skilled === ''
     ) {
       return M.toast({
         html: 'Please Enter all the fields',
@@ -59,7 +64,9 @@ const UpdateSeekerProfile = () => {
       textarea1: '',
     });
   };
-
+  if(redirctTo){
+    return <Redirect to="/login" />
+ }else{
   return (
     <body
       className='signup'
@@ -149,7 +156,7 @@ const UpdateSeekerProfile = () => {
                     <label for='exp'>Experience</label>
                   </div>
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                   <p>
                     <label
                       style={{
@@ -183,7 +190,7 @@ const UpdateSeekerProfile = () => {
                       <span>No</span>
                     </label>
                   </div>
-                </div>
+                </div> */}
                 <div class='row'>
                   <div class='input-field col s12'>
                     <textarea
@@ -283,7 +290,14 @@ const UpdateSeekerProfile = () => {
       </main>
     </body>
   );
+}
 };
 
-export default UpdateSeekerProfile;
+const getPropsFromState = (state) => {
+  return {
+      user : state.user,
+  }
+}
+
+export default connect(getPropsFromState , null)(UpdateSeekerProfile);
 

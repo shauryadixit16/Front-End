@@ -119,7 +119,7 @@ const Login = ({login}) => {
                       {' '}
                       <Link
                       exact
-                        to='/signup'
+                        to='/registertype'
                         style={{
                           color: '#43cea2',
                           fontWeight: '600',

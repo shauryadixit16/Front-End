@@ -1,4 +1,4 @@
-import { getInList, getJobList } from '../api/Offer';
+ import { getInList, getJobList } from '../api/Offer';
 import {signin , register} from '../api/Auth';
 export const requestJobs = () => {
     return async (dispatch, getState) => {
@@ -13,15 +13,31 @@ export const requestInts = () => {
         dispatch({ type:"STORE_INTS", internships: result.internships });
     }
 }
+
 export const Register = (info , reg) => {
-    return async () => {
+    return async (dispatch) => {
         const result = await register(info,reg);
-        // localStorage.setItem("userToken" , result.token);
+            if(result.success == true){
+                dispatch({type :"USER_INFO", user : result.userData});
+            }
+            else{
+            console.log(result.msg);
+            }
+        localStorage.setItem("userToken" , result.token);
     }
 }
+
 export const login = (email , pass) => {
-    return async () => {
+    return async (dispatch) => {
         const result = await signin(email,pass);
-        // localStorage.setItem("userToken" , result.token);
+        if(result.success == true){
+            dispatch({type :"USER_INFO", user : result.userData});
+        }
+        else{
+        console.log(result.msg);
+        }
+    localStorage.setItem("userToken" , result.token);
     }
 }
+
+

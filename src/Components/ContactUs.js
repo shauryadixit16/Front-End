@@ -1,7 +1,52 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import M from 'materialize-css/dist/js/materialize.min.js';
 import {Link} from 'react-router-dom';
 const ContactUs = () => {
+
+  useEffect(()=>{
+    M.AutoInit();
+  },[])
+
+  const [state,Setstate] = useState({
+    name: '',
+    email:'',
+    phone:'',
+    msg:''
+  })
+
+  const {name , email , phone , msg} = state;
+
+  const Change = (e) => {
+    Setstate({...state , [e.target.name] : e.target.value});
+  }
+
+  const Submit = (e) => {
+    e.preventDefault();
+
+    if (name === '' || email === '' || phone === '' ||  msg === ''){
+      return M.toast({  
+        html: 'Please Enter all the fields',
+        displayLength: 3000,
+      });
+    }
+    else{
+    Setstate({
+      name: '',
+      email:'',
+      phone:'',
+      msg:''
+    })
+    return M.toast({  
+      html: 'Thanks for Contacting with us!',
+      displayLength: 3000,
+    });
+
+
+    // API CALL
+    
+  }
+  }
   return (
     <footer
       className='page-footer'
@@ -18,6 +63,9 @@ const ContactUs = () => {
                     <input
                       id='icon_prefix'
                       type='text'
+                      name='name'
+                      value={name}
+                      onChange={Change}
                       className='validate'
                       placeholder='Name'
                     />
@@ -26,7 +74,10 @@ const ContactUs = () => {
                     <i className='material-icons prefix'>mail</i>
                     <input
                       id='icon_mail'
+                      name='email'
                       type='email'
+                      value={email}
+                      onChange={Change}
                       className='validate'
                       placeholder='Email'
                     />
@@ -35,6 +86,9 @@ const ContactUs = () => {
                     <i className='material-icons prefix'>phone</i>
                     <input
                       id='icon_telephone'
+                      name='phone'
+                      value={phone}
+                      onChange={Change}
                       type='tel'
                       className='validate'
                       placeholder='Contact No.'
@@ -44,6 +98,9 @@ const ContactUs = () => {
                     <i className='material-icons prefix'>mode_edit</i>
                     <textarea
                       id='icon_prefix2'
+                      name='msg'
+                      value={msg}
+                      onChange={Change}
                       className='materialize-textarea'
                       placeholder='Message'
                     ></textarea>
@@ -54,6 +111,7 @@ const ContactUs = () => {
                   type='submit'
                   name='action'
                   style={{ backgroundColor: '#59dead'}}
+                  onClick={Submit}
                 >
                   Submit
                   <i className='material-icons right'>send</i>

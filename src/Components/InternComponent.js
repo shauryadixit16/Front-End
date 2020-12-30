@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Card, CardSubtitle, CardText, CardTitle,CardBody,Button,Modal,ModalHeader,ModalBody,FormGroup, Label, Input  } from 'reactstrap';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import {connect} from 'react-redux';
 const  RenderIntern= (props) => {
     useEffect(() => {
         M.AutoInit();
@@ -12,6 +13,12 @@ const  RenderIntern= (props) => {
     }
     const submit = () => {
         toggle();
+        if(!props.user){
+            return M.toast({
+                html: 'You need to login for applying',
+                displayLength: 3000,
+              });
+        }
         return M.toast({
             html: 'You have Successfully Applied for this intern',
             displayLength: 3000,
@@ -60,4 +67,11 @@ const  RenderIntern= (props) => {
         </div>
     )
 };
-export default RenderIntern;
+
+const getPropsFromState = (state) => {
+    return {
+        user : state.user,
+    }
+  }
+
+export default connect(getPropsFromState,null)(RenderIntern);

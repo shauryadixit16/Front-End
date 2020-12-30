@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
+import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-const PostJob = () => {
+const PostJob = ({user}) => {
+  const [redirctTo, setRedirctTo] = useState(false);
   useEffect(() => {
+    if(!user){setRedirctTo({redirctTo:true})}
+    console.log(user);
       M.AutoInit();
   });
   const [state, Setstate] = useState({
@@ -32,15 +36,14 @@ const PostJob = () => {
       });
     }
   else{
-   console.log('done');
-  }
+   console.log('done');}
   };
+
 
   // const register = (e) => {
   //   e.preventDefault();
    
   //   // API CALL
-
   //   M.toast({ html: 'You have been Registered', displayLength: 3000 });
   //   Setstate({
   //     title: '',
@@ -55,6 +58,9 @@ const PostJob = () => {
   //   });
   // };
 
+  if(redirctTo){
+    return <Redirect to="/login" />
+ }else{
   return (
     <body
       className='signup'
@@ -257,5 +263,13 @@ const PostJob = () => {
       </main>
     </body>
   );
+}
 };
-export default PostJob;
+
+const getPropsFromState = (state) => {
+  return {
+      user : state.user,
+  }
+}
+
+export default connect(getPropsFromState,null)(PostJob);

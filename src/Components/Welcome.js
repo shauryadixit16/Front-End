@@ -18,8 +18,8 @@ const Welcome=() =>{
                     <i class="large material-icons">work</i>
                 </a>
                 <ul>
-                    <li><Link to="/postjob" class="btn-floating red btn-large">Post Intern</Link></li>
-                    <li><Link class="btn-floating red darken-1 btn-large">Get Intern</Link></li>
+                    <li><Link to="/profilerecruiter" class="btn-floating red btn-large">Post Intern</Link></li>
+                    <li><Link to="/profileseeker" class="btn-floating red darken-1 btn-large">Get Intern</Link></li>
                 </ul>
             </div>
             </section>
@@ -27,5 +27,4 @@ const Welcome=() =>{
         </div>
         )
     }
-
 export default Welcome;

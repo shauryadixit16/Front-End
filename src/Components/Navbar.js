@@ -3,7 +3,7 @@ import {withRouter,NavLink} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
 import {Navbar,NavItem,NavbarBrand,Collapse,NavbarToggler,Nav,Button, NavbarText} from 'reactstrap';
 import Modal from 'react-modal';
-import Signup from '../Components/Signup';
+import Login from '../Components/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class NavTop extends Component{
@@ -23,13 +23,13 @@ class NavTop extends Component{
     componentDidMount(){
         const user = localStorage.getItem('userToken');
         if(user!==null){
-            const userName = jwt_decode(user).userName;
-            if(user){
-                this.setState({
-                    currentUser: user,
-                    userName:userName,
-                });
-            }
+            // const userName = jwt_decode(user).userName;
+            // if(user){
+            //     this.setState({
+            //         currentUser: user,
+            //         userName:userName,
+            //     });
+            // }
         }
     }
 
@@ -106,12 +106,12 @@ class NavTop extends Component{
                                 </NavLink>
                             </NavItem>}
                             <NavItem>
-                                <Button outline onClick={this.toggleModal} className="login-button">
+                                <NavLink outline to='/login' onClick={this.toggleModal} className="login-button">
                                     {this.state.currentUser!==""?"LOGOUT":"LOGIN/SIGNUP"}
-                                </Button>
-                                <Modal isOpen={this.state.isModelOpen} onRequestClose={()=>{this.setState({isModelOpen:false})}}>
-                                    <Signup/>
-                                </Modal>
+                                </NavLink>
+                                {/* <Modal isOpen={this.state.isModelOpen} onRequestClose={()=>{this.setState({isModelOpen:false})}}>
+                                    
+                                </Modal> */}
                             </NavItem>
                         </Nav>
                     <div  id="hiddentext">

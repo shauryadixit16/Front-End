@@ -28,7 +28,7 @@ const onSubmit = (e) => {
                 <img src={s2} style={{height:240,width:300}} alt="User Image"/>
               </div>
             </div>
-            <div className="col s12 m8 push-m1 bg-dark mt-5" style={{paddingLeft:20}}>
+            <div className="col s12 m8 push-m1 bg-dark mt-5" style={{paddingLeft:15}}>
               {/* <h2 className="name">Microsoft</h2>
               <h5 className="name my-4"> IT Company</h5>
               <a href="mailto:mchhabaria123@gmail.com" target="_blank" style={{color: 'green'}}>
