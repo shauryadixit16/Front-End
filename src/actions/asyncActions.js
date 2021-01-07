@@ -29,6 +29,7 @@ export const Register = (info , reg) => {
 
 export const login = (email , pass) => {
     return async (dispatch) => {
+        console.log(email,pass);
         const result = await signin(email,pass);
         if(result.success == true){
             dispatch({type :"USER_INFO", user : result.userData});
@@ -40,4 +41,21 @@ export const login = (email , pass) => {
     }
 }
 
+export const search = (who , text) => {
+    return async (dispatch) => {
+        console.log(who,text);
+        if(who == 'comp'){  
+        dispatch({type : 'SEARCH_COMP' , text})
+        }
+        else{
+            dispatch({type : 'SEARCH_INTERN' , text})
+        }
+    }
+}
+
+export const ClearFilter = () => {
+    return async (dispatch) => {
+        dispatch({type : "CLEAR_SEARCH"});
+    }
+}
 

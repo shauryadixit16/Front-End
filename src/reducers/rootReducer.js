@@ -1,7 +1,10 @@
 const initState = {
     jobs: [],
     internships: [],
-    user:{}
+    user:{},
+    students : [],
+    recruiters: [],
+    filtered : {},
 }
 
 const rootReducer = (state= initState, action) => {
@@ -23,7 +26,30 @@ const rootReducer = (state= initState, action) => {
             user: action.userData,
         }
     }
-
+    else if (action.type==="SEARCH_COMP"){
+        state = {
+            ...state,
+            filtered: state.recruiters.filter(x => {
+                const regex = new RegExp(`${action.text}`,'gi');
+                return x.name.match(regex);
+            }),
+        }
+    }
+    else if (action.type==="SEARCH_INTERN"){
+        state = {
+            ...state,
+            filtered: state.students.filter(x => {
+                const regex = new RegExp(`${action.text}`,'gi');
+                return x.name.match(regex);
+            }),
+        }
+    }
+    else if(action.type === "CLEAR_SEARCH"){
+        state ={
+            ...state,
+            filtered : null
+        }
+    }
     return state;
 }
 

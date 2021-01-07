@@ -25,10 +25,10 @@ const onSubmit = (e) => {
             <div className="col s12 m12">
             <div className="col s12 m4">
             <div style={{ marginTop:25}} className="rounded" >
-                <img src={s2} style={{height:240,width:300}} alt="User Image"/>
+                <img src={s2} style={{height:240,width:270}} alt="User Image"/>
               </div>
             </div>
-            <div className="col s12 m8 push-m1 bg-dark mt-5" style={{paddingLeft:15}}>
+            <div className="col s12 m8 push-m1 bg-dark mt-5" style={{paddingLeft:10}}>
               {/* <h2 className="name">Microsoft</h2>
               <h5 className="name my-4"> IT Company</h5>
               <a href="mailto:mchhabaria123@gmail.com" target="_blank" style={{color: 'green'}}>
@@ -52,7 +52,7 @@ const onSubmit = (e) => {
               <img src="" alt="Resume"/>
             </div>
           </div> */}
-          <div className="but ">
+          <div className="but mt-3">
             <p class="btn bg-dark" style={{marginRight:8}}>Selected 3</p>
             <p class="btn bg-dark">Applied 13</p>
             </div>

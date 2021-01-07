@@ -13,7 +13,7 @@ class NavTop extends Component{
             isNavOpen: false,
             isModelOpen:false,
             selected:"",
-            currentUser:"",
+            currentUser: "done",
             userName:"",
         }
         this.toggleNav=this.toggleNav.bind(this);
@@ -53,11 +53,11 @@ class NavTop extends Component{
     userLogout = () => {
         localStorage.removeItem('userToken');
         this.setState({
-            currentUser:undefined,
+            currentUser:"",
             selected:"",
         })
         this.props.history.push('/');
-        window.location.reload(false);
+       // window.location.reload(false);
     }
 
     render(){
@@ -99,12 +99,19 @@ class NavTop extends Component{
                             </NavItem>
                             :null}
                         </Nav>
-                        <Nav navbar>
-                        {this.state.currentUser!=="" && <NavItem>
+                        <Nav navbar className="mt-2">
+                        {this.state.currentUser!=="" ? <NavItem>
+                                
                                 <NavLink className="nav-link" to="/profile" onClick={this.toggleNav}>
                                     MY PROFILE
                                 </NavLink>
-                            </NavItem>}
+                            </NavItem> : null}
+                            {this.state.currentUser!=="" ? <NavItem>
+                                
+                                <NavLink className="nav-link" to="/search" onClick={this.toggleNav}>
+                                   SEARCH <i className="fas fa-search"></i>
+                                </NavLink>
+                            </NavItem> : null}
                             <NavItem>
                                 <NavLink outline to='/login' onClick={this.toggleModal} className="login-button">
                                     {this.state.currentUser!==""?"LOGOUT":"LOGIN/SIGNUP"}

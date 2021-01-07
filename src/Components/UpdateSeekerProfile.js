@@ -7,7 +7,7 @@ const UpdateSeekerProfile = ({user}) => {
   const [redirctTo, setRedirctTo] = useState(false);
   useEffect(() => {
     if(!user){setRedirctTo({redirctTo:true})}
-    console.log(user);
+    // console.log(user);
       M.AutoInit();
   });
   const [state, Setstate] = useState({
@@ -48,7 +48,9 @@ const UpdateSeekerProfile = ({user}) => {
         displayLength: 3000,
       });
     }
+    console.log(textarea1);
     return Setstate({ ...state, modal: true });
+    
   };
 
   const register = (e) => {
@@ -206,7 +208,7 @@ const UpdateSeekerProfile = ({user}) => {
                     </label>
                   </div>
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                   <p>
                     <label
                       style={{
@@ -230,7 +232,7 @@ const UpdateSeekerProfile = ({user}) => {
                       <span>Temporary</span>
                     </label>
                   </div>
-                </div>
+                </div> */}
                 <br />
                 <center>
                   <div class='row'>

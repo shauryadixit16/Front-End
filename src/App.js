@@ -9,6 +9,7 @@ import PostJob from './Components/PostJob';
 import ProfileSeeker from './Components/ProfileSeeker';
 import ProfileRecruiter from './Components/ProfileRecruiter';
 import UpdateSeekerProfile from './Components/UpdateSeekerProfile';
+import FindPage from './pages/FindPage';
 import RegisterType from './Components/RegisterType';
 import Job from './pages/JobPage';
 import Intern from './pages/InternPage';
@@ -32,6 +33,7 @@ class App extends Component {
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/registertype' component={RegisterType} />
                 <Route exact path='/postjob' component={PostJob} />
+                <Route exact path='/search' component={FindPage} />
                 <Route exact path='/contactus' component={ContactUs} />
               </Switch>   
       </BrowserRouter>
