@@ -3,7 +3,8 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import s2 from '../img/s2.jpg'
 import {Link} from 'react-router-dom';
- const ProfileSeeker = () => {
+import {connect} from 'react-redux';
+ const ProfileSeeker = ({user}) => {
   useEffect(() => {
     M.AutoInit();
   });
@@ -17,6 +18,7 @@ const onSubmit = (e) => {
     Setstate({...state,toggle:true})
   }
 }
+user.skills = ["python","c++","html"];
 
   return (
     <div className="profile">
@@ -56,6 +58,16 @@ const onSubmit = (e) => {
             <p class="btn bg-dark" style={{marginRight:8}}>Selected 3</p>
             <p class="btn bg-dark">Applied 13</p>
             </div>
+            <div>
+              
+            <ul>
+                    {user.skills.map((skill,index) => (
+                    <li key={index} className="text-dark mt-2" style={{fontSize:18}}>
+                      <i className="fas fa-check"></i>{' '} {skill}
+                    </li>
+                  ))}
+                  </ul>
+                  </div>
           {/* skills */}
           {/* recommendation */}
           <div class="row">
@@ -73,7 +85,7 @@ const onSubmit = (e) => {
 
 </div>
   </div>
-  <div>
+  <div className="my-3">
       <Link to='/updateprofile' class=" waves-light btn bg-dark"><i class="material-icons right">update</i>Update Profile</Link>
     </div>
           
@@ -81,4 +93,9 @@ const onSubmit = (e) => {
       </div>
   )
 }
-export default ProfileSeeker;
+const getPropsFromState = (state) => {
+  return {
+      user : state.user,
+  }
+}
+export default connect(getPropsFromState , null)(ProfileSeeker);

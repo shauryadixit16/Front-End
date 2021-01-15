@@ -203,11 +203,22 @@ const UpdateSeekerProfile = ({user}) => {
                       onChange={onchange}
                     ></textarea>
                     <label for='textarea1'>
-                      <i class='fas fa-align-left'></i> {''} {''}Fields of
-                      Interest
+                      <i class='fas fa-align-left'></i> {''} {''}Skills
                     </label>
                   </div>
                 </div>
+                <p>
+                    <label
+                      style={{
+                        color: '#59dead',
+                        fontWeight: 600,
+                        fontSize: 13,
+                        marginBottom : 25
+                      }}
+                    >
+                    Please use comma separated values for Skills (eg. MS Word,Excel)
+                    </label>
+                  </p> 
                 {/* <div className='row'>
                   <p>
                     <label

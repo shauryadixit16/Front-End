@@ -9,7 +9,7 @@ const PostJob = ({user}) => {
     if(!user){setRedirctTo({redirctTo:true})}
     console.log(user);
       M.AutoInit();
-  });
+  },[]);
   const [state, Setstate] = useState({
     title: '',
     desc: '',
@@ -36,7 +36,8 @@ const PostJob = ({user}) => {
       });
     }
   else{
-   console.log('done');}
+   console.log(state);
+  }
   };
 
 
@@ -129,9 +130,22 @@ const PostJob = ({user}) => {
                       value={req}
                       onChange={onchange}
                     />
-                    <label for='req'>Requirements</label>
+                    <label for='req'>Skill Requirements</label>
                   </div>
                 </div> 
+                <p>
+                    <label
+                      style={{
+                        color: '#59dead',
+                        fontWeight: 600,
+                        fontSize: 13,
+                        marginBottom : 25
+                      }}
+                    >
+                  Please use comma separated values for Skills (eg. MS Word,Excel)
+                    </label>
+                  </p> 
+               
                 {/* <div class='row'>
                   <div class='input-field col s12'>
                     <input
@@ -253,7 +267,7 @@ const PostJob = ({user}) => {
                       </button>
                   </div>
                 </center>
-                <h4 style={{ marginBottom: 20, marginTop: 15 }}>
+                <h4 className="mx-auto  " style={{ marginBottom: 20, marginTop: 15 }}>
                     Gateway of Employement
                   </h4>
               </form>

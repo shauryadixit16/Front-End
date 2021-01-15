@@ -2,7 +2,8 @@ import React from 'react'
 import s2 from '../img/s2.jpg'
 import {Link } from 'react-router-dom';
 const FilterItem = ({fill}) => {
-    fill.category = 'Employee'
+    fill.category = 'Employee';
+    fill.skills = ["python","c++","html"];
     return (
         <div>
            {fill.category === 'Employee' ? (  
@@ -28,7 +29,13 @@ const FilterItem = ({fill}) => {
                     <p class="btn bg-dark" style={{marginRight:8}}>Selected 3{fill.select}</p>
                     <p class="btn bg-dark">Applied 13{fill.apply}</p>
                     </div>
-             
+                    <ul>
+                    {fill.skills.map((skill,index) => (
+                    <li key={index} className="text-dark mt-2" style={{fontSize:18}}>
+                      <i className="fas fa-check"></i>{' '} {skill}
+                    </li>
+                  ))}
+                  </ul>
               </div>
               </div>
            ) : (
